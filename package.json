@@ -1,0 +1,12 @@
+{
+  "name": "tokens-claimed-fetcher",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node fetchTokensClaimed.js"
+  },
+  "dependencies": {
+    "thirdweb": "^3.18.6",
+    "fs": "^0.0.1-security"
+  }
+}
