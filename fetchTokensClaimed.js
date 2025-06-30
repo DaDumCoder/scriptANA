@@ -1,8 +1,8 @@
 import { prepareEvent, getContract, getContractEvents } from "thirdweb";
 import fs from "fs";
 
-const CONTRACT_ADDRESS = "0xYourContractAddress"; // Replace with actual contract address
-const THIRDWEB_RPC = "https://<your-rpc>"; // Optional: only if you use a custom RPC
+const CONTRACT_ADDRESS = "0x696ee979e8CC1D5a2CA7778606a3269C00978346"; // Replace with actual contract address
+const THIRDWEB_RPC = "https://50312.rpc.thirdweb.com/4fc4975fe3ae9a3be949e98272dec939"; // Optional: only if you use a custom RPC
 
 async function main() {
   const contract = await getContract(CONTRACT_ADDRESS);
