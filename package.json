@@ -6,6 +6,7 @@
     "start": "node fetchTokensClaimed.js"
   },
   "dependencies": {
-    "@thirdweb-dev/sdk": "^3.18.6"
+    "@thirdweb-dev/sdk": "^5.0.0",
+    "@thirdweb-dev/chains": "^5.0.0"
   }
 }
