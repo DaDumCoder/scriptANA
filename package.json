@@ -1,5 +1,5 @@
 {
-  "name": "thirdweb-sdk-test",
+  "name": "tokens-claimed-final",
   "version": "1.0.0",
   "scripts": {
     "start": "node fetchTokensClaimed.js"

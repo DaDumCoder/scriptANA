@@ -1,21 +1,18 @@
-const { getContract, prepareEvent, getContractEvents } = require("@thirdweb-dev/sdk");
+const { ThirdwebSDK } = require("@thirdweb-dev/sdk");
 const { ethers } = require("ethers");
 const fs = require("fs");
 
-const CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000"; // replace with actual contract address
+const CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000"; // your contract
+const RPC_URL = "https://rpc.ankr.com/eth_goerli";
 
 async function main() {
-  const provider = new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/eth_goerli");
-  const contract = await getContract(CONTRACT_ADDRESS, provider);
+  const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
 
-  const preparedEvent = prepareEvent({
-    signature: "event TokensClaimed(uint256 indexed claimConditionIndex, address indexed claimer, address receiver, uint256 quantity)"
-  });
+  const sdk = new ThirdwebSDK(provider); // This fixes the issue
+  const contract = await sdk.getContract(CONTRACT_ADDRESS);
 
-  const events = await getContractEvents({
-    contract,
-    events: [preparedEvent],
-  });
+  const preparedEvent = contract.events.prepare("TokensClaimed");
+  const events = await contract.events.getEvents(preparedEvent);
 
   console.log("Total events found:", events.length);
 
@@ -27,7 +24,7 @@ async function main() {
   });
 
   fs.writeFileSync("tokens_claimed.csv", rows.join("\n"));
-  console.log("Saved to tokens_claimed.csv");
+  console.log("✅ Saved to tokens_claimed.csv");
 }
 
 main();
