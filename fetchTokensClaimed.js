@@ -1,4 +1,4 @@
-import { prepareEvent, getContract, getContractEvents } from "thirdweb";
+import { prepareEvent, getContract, getContractEvents } from "@thirdweb-dev/sdk";
 import fs from "fs";
 
 const CONTRACT_ADDRESS = "0x696ee979e8CC1D5a2CA7778606a3269C00978346"; // Replace with actual contract address
