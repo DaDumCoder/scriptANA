@@ -1,12 +1,12 @@
 {
-  "name": "tokens-claimed-fetcher",
+  "name": "thirdweb-sdk-test",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "start": "node fetchTokensClaimed.js"
   },
   "dependencies": {
-    "@thirdweb-dev/sdk": "^5.0.0",
-    "@thirdweb-dev/chains": "^5.0.0"
+    "@thirdweb-dev/sdk": "^4.0.99",
+    "ethers": "^5.7.2"
   }
 }
