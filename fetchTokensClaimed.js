@@ -1,8 +1,8 @@
-import { prepareEvent, getContract, getContractEvents } from "@thirdweb-dev/sdk";
-import { ethers } from "ethers";
-import fs from "fs";
+const { getContract, prepareEvent, getContractEvents } = require("@thirdweb-dev/sdk");
+const { ethers } = require("ethers");
+const fs = require("fs");
 
-const CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000"; // dummy address
+const CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000000"; // replace with actual contract address
 
 async function main() {
   const provider = new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/eth_goerli");
